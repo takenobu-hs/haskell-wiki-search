@@ -10,6 +10,30 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!--
+      NOTE:
+        THIS IS RAPID PROTOTYPING FOR SHARING CONCEPT.
+        POOR AND DURTY CODING.
+    -->
+    <script type="text/javascript">
+    function onsubmit_func() {
+        var v = document.getElementsByName("checkb");
+
+        var c = []
+        for (i=0; i<v.length; i++) {
+          if (v[i].checked == true) { c.push(v[i].value); }
+        }
+
+        var d = []
+        if (c.length >= 1) {d += c[0]}
+        for (i=1; i<c.length; i++) { d += " OR " + c[i]; }
+
+        qstr = document.getElementById("query").value + " " + d
+        document.getElementById("hid_q").value = qstr
+    }
+    </script>
+
     <title>Haskell-wiki-search by takenobu-hs</title>
   </head>
 
@@ -18,19 +42,24 @@
       <div class="inner">
 
         <header>
-          <h1>Haskell-wiki-search</h1>
-          <h2>Haskell wiki contents search for multiple wiki sites</h2>
+          <h1>Haskell wiki search</h1>
+          <h2>for multiple wiki sites</h2>
         </header>
 
 
+        <!- main body is here -->
+        <form action="http://www.google.com/search" method="get" onsubmit="onsubmit_func()">
+          <input id="query" type=text size=60 maxlength=255 value="" placeholder="input here">
+          <input id="hid_q" type=hidden name=q value="">
+          <button>Google search</button>
+          <br><br>
 
-
-
-
-        <hr>
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/takenobu-hs/haskell-wiki-search" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+          <input name="checkb" type=checkbox value="site:ghc.haskell.org/trac/ghc/wiki" checked> https://ghc.haskell.org/trac/ghc/wiki <br>
+          <input name="checkb" type=checkbox value="site:wiki.haskell.org/Haskell" checked> https://wiki.haskell.org/Haskell <br>
+          <input name="checkb" type=checkbox value="site:phabricator.haskell.org/w"> https://phabricator.haskell.org/w<br>
+          <input name="checkb" type=checkbox value="site:hackage.haskell.org"> https://hackage.haskell.org<br>
+          <input name="checkb" type=checkbox value="site:scholar.google.com"> https://scholar.google.com<br>
+        </form>
 
 
         <footer>

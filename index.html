@@ -11,16 +11,11 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <style type="text/css">
-    #moresites {
-      display:none;
-    }
-    </style>
-
     <!--
       NOTE:
         THIS IS RAPID PROTOTYPING FOR SHARING CONCEPT.
         POOR AND DURTY CODING.
+	SHOULD BE REFUCTORING.
     -->
     <script type="text/javascript">
     function onsubmit_func() {
@@ -40,14 +35,20 @@
     }
 
 
-    var moresites_visible = "invisible";
-    function moresites_onclick() {
-      if ( moresites_visible == "invisible" ) {
+    function init() {
+      args = {};
+      pair = location.search.substring(1).split("&");
+
+      for (i = 0; i < pair.length; i++) {
+        key_value = pair[i].split("=");
+        args[key_value[0]] = key_value[1];
+      }
+
+      siteview = decodeURI( args.siteview );
+      if (siteview == "full")  {
         document.getElementById("moresites").style.display="block";
-        moresites_visible = "visible";
       } else {
         document.getElementById("moresites").style.display="none";
-        moresites_visible = "invisible";
       }
     }
     </script>
@@ -55,7 +56,7 @@
     <title>Haskell-wiki-search by takenobu-hs</title>
   </head>
 
-  <body>
+  <body onload="init()">
     <div id="container">
       <div class="inner">
 
@@ -79,7 +80,7 @@
           <input name="checkb" type=checkbox value="site:hackage.haskell.org"> https://hackage.haskell.org<br>
           <input name="checkb" type=checkbox value="site:scholar.google.com"> https://scholar.google.com<br>
 	  <br>
-	  <a href="javascript:void(0)" style="color:#666;" onclick="moresites_onclick(); return false"><font size=-1> more sites...</font></a>
+	  <a href="?siteview=full" style="color:#666;"><font size=-1> more sites...</font></a>
 
 	  <div id="moresites">
             Mailing lists and questions:<br>

@@ -11,6 +11,12 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <style type="text/css">
+    #moresites {
+      display:none;
+    }
+    </style>
+
     <!--
       NOTE:
         THIS IS RAPID PROTOTYPING FOR SHARING CONCEPT.
@@ -31,6 +37,18 @@
 
         qstr = document.getElementById("query").value + " " + d
         document.getElementById("hid_q").value = qstr
+    }
+
+
+    var moresites_visible = "invisible";
+    function moresites_onclick() {
+      if ( moresites_visible == "invisible" ) {
+        document.getElementById("moresites").style.display="block";
+        moresites_visible = "visible";
+      } else {
+        document.getElementById("moresites").style.display="none";
+        moresites_visible = "invisible";
+      }
     }
     </script>
 
@@ -54,11 +72,35 @@
           <button>Google search</button>
           <br><br>
 
+          Wikis, packages and papers:<br>
           <input name="checkb" type=checkbox value="site:ghc.haskell.org/trac/ghc/wiki" checked> https://ghc.haskell.org/trac/ghc/wiki <br>
           <input name="checkb" type=checkbox value="site:wiki.haskell.org/Haskell" checked> https://wiki.haskell.org/Haskell <br>
           <input name="checkb" type=checkbox value="site:phabricator.haskell.org/w"> https://phabricator.haskell.org/w<br>
           <input name="checkb" type=checkbox value="site:hackage.haskell.org"> https://hackage.haskell.org<br>
           <input name="checkb" type=checkbox value="site:scholar.google.com"> https://scholar.google.com<br>
+	  <br>
+	  <a href="javascript:void(0)" style="color:#666;" onclick="moresites_onclick(); return false"><font size=-1> more sites...</font></a>
+
+	  <div id="moresites">
+            Mailing lists and questions:<br>
+            <input name="checkb" type=checkbox value="site:mail.haskell.org/pipermail/ghc-devs"> https://mail.haskell.org/pipermail/ghc-devs <br>
+            <input name="checkb" type=checkbox value="site:mail.haskell.org/pipermail/haskell-cafe"> https://mail.haskell.org/pipermail/haskell-cafe <br>
+            <input name="checkb" type=checkbox value="site:www.reddit.com/r/haskell"> https://www.reddit.com/r/haskell <br>
+            <input name="checkb" type=checkbox value="site:stackoverflow.com/questions"> https://stackoverflow.com/questions <br>
+	    <br>
+
+            Tickets, code reviews and source codes:<br>
+            <input name="checkb" type=checkbox value="site:ghc.haskell.org/trac/ghc/ticket"> https://ghc.haskell.org/trac/ghc/ticket <br>
+            <input name="checkb" type=checkbox value="site:phabricator.haskell.org"> https://phabricator.haskell.org <br>
+            <input name="checkb" type=checkbox value="site:github.com/ghc/ghc"> https://github.com/ghc/ghc <br>
+	    <br>
+
+            Haskell report 2010 and GHC user guide:<br>
+            <input name="checkb" type=checkbox value="site:www.haskell.org/onlinereport/haskell2010"> https://www.haskell.org/onlinereport/haskell2010 <br>
+            <input name="checkb" type=checkbox value="site:downloads.haskell.org/~ghc/latest/docs/html/users_guide"> https://downloads.haskell.org/~ghc/latest/docs/html/users_guide <br>
+	    <br>
+
+	  </div>
         </form>
 
 

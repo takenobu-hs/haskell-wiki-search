@@ -41,6 +41,15 @@
     }
 
 
+    function update_checked_all(check_status) {
+        var v = document.getElementsByName("checkb");
+
+        for (i=0; i<v.length; i++) {
+	  v[i].checked = check_status;
+        }
+    }
+
+
     function init() {
       args = {};
       pair = location.search.substring(1).split("&");
@@ -115,6 +124,8 @@
 	    <br>
 	    </div>
 
+            [<a href="javascript:void(0)" style="color:#666;" onclick="update_checked_all(true); return false"><font size=-1>check all sites</a>] |
+            [<a href="javascript:void(0)" style="color:#666;" onclick="update_checked_all(false); return false"><font size=-1>reset all sites</a>]
 	  </div>
         </form>
 

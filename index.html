@@ -16,6 +16,10 @@
       color: #666;
     }
 
+    .weak {
+      color: #9d9d9d;
+    }
+
     #moresites {
       display:none;
     }
@@ -138,11 +142,11 @@
 	    <br>
 
             <a href="javascript:void(0)" onclick="update_category('cbox_prop'); return false">Proposals:</a><br>
-            <div style="font-style: italic;">
-            <input class="cbox" name="cbox_prop" type=checkbox value="site:github.com/ghc-proposals/ghc-proposals"> https://github.com/ghc-proposals/ghc-proposals <br>
-            <input class="cbox" name="cbox_prop" type=checkbox value="site:github.com/haskell/rfcs"> https://github.com/haskell/rfcs<br>
-	    <br>
+            <div class="weak">
+            <input class="cbox weak" name="cbox_prop" type=checkbox value="site:github.com/ghc-proposals/ghc-proposals"> https://github.com/ghc-proposals/ghc-proposals <br>
+            <input class="cbox weak" name="cbox_prop" type=checkbox value="site:github.com/haskell/rfcs"> https://github.com/haskell/rfcs<br>
 	    </div>
+	    <br>
 
             [<a href="javascript:void(0)" onclick="update_checked_all(true); return false"><font size=-1>check all sites</a>] |
             [<a href="javascript:void(0)" onclick="update_checked_all(false); return false"><font size=-1>reset all sites</a>]

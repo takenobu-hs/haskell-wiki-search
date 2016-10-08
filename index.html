@@ -25,43 +25,43 @@
     -->
     <script type="text/javascript">
     function generate_query() {
-        var v = document.getElementsByClassName("cbox");
+      var v = document.getElementsByClassName("cbox");
 
-        var c = []
-        for (i=0; i<v.length; i++) {
-          if (v[i].checked == true) { c.push(v[i].value); }
-        }
+      var c = []
+      for (i=0; i<v.length; i++) {
+        if (v[i].checked == true) { c.push(v[i].value); }
+      }
 
-        var d = []
-        if (c.length >= 1) {d += c[0]}
-        for (i=1; i<c.length; i++) { d += " OR " + c[i]; }
+      var d = []
+      if (c.length >= 1) {d += c[0]}
+      for (i=1; i<c.length; i++) { d += " OR " + c[i]; }
 
-        qstr = document.getElementById("query").value + " " + d
-        document.getElementById("hid_q").value = qstr
+      qstr = document.getElementById("query").value + " " + d
+      document.getElementById("hid_q").value = qstr
     }
 
 
     function update_checked_all(check_status) {
-        var v = document.getElementsByClassName("cbox");
+      var v = document.getElementsByClassName("cbox");
 
-        for (i=0; i<v.length; i++) {
-	  v[i].checked = check_status;
-        }
+      for (i=0; i<v.length; i++) {
+        v[i].checked = check_status;
+      }
     }
 
 
     function update_category(cat) {
-        var v = document.getElementsByName(cat);
+      var v = document.getElementsByName(cat);
 
-	if (v[0].checked == true) {
-	  check_status = false;
-	} else {
-	  check_status = true;
-	}
+      if (v[0].checked == true) {
+        check_status = false;
+      } else {
+        check_status = true;
+      }
 
-        for (i=0; i<v.length; i++) {
-	  v[i].checked = check_status;
-        }
+      for (i=0; i<v.length; i++) {
+        v[i].checked = check_status;
+      }
     }
 
 

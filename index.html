@@ -111,7 +111,7 @@
           <button>Google search</button>
           <br><br>
 
-          <a href="javascript:void(0)" onclick="update_category('cbox_wiki'); return false">Wikis, packages and papers:</a><br>
+          <a href="javascript:void(0)" title="toggle sub category" onclick="update_category('cbox_wiki'); return false">Wikis, packages and papers:</a><br>
           <input class="cbox" name="cbox_wiki" type=checkbox value="site:ghc.haskell.org/trac/ghc/wiki" checked> https://ghc.haskell.org/trac/ghc/wiki <br>
           <input class="cbox" name="cbox_wiki" type=checkbox value="site:wiki.haskell.org" checked> https://wiki.haskell.org<br>
           <input class="cbox" name="cbox_wiki" type=checkbox value="site:phabricator.haskell.org/w"> https://phabricator.haskell.org/w<br>
@@ -122,7 +122,7 @@
 	  <a href="?siteview=full"><font size=-1> more sites...</font></a>
 
 	  <div id="moresites">
-          <a href="javascript:void(0)" onclick="update_category('cbox_ml'); return false">Mailing lists and questions:</a><br>
+          <a href="javascript:void(0)" title="toggle sub category" onclick="update_category('cbox_ml'); return false">Mailing lists and questions:</a><br>
             <input class="cbox" name="cbox_ml" type=checkbox value="site:mail.haskell.org/pipermail/ghc-devs"> https://mail.haskell.org/pipermail/ghc-devs <br>
             <input class="cbox" name="cbox_ml" type=checkbox value="site:mail.haskell.org/pipermail/libraries"> https://mail.haskell.org/pipermail/libraries <br>
             <input class="cbox" name="cbox_ml" type=checkbox value="site:mail.haskell.org/pipermail/haskell-cafe"> https://mail.haskell.org/pipermail/haskell-cafe <br>
@@ -130,18 +130,18 @@
             <input class="cbox" name="cbox_ml" type=checkbox value="site:stackoverflow.com/questions"> https://stackoverflow.com/questions <br>
 	    <br>
 
-            <a href="javascript:void(0)" onclick="update_category('cbox_code'); return false">Tickets, code reviews and source codes:</a><br>
+            <a href="javascript:void(0)" title="toggle sub category" onclick="update_category('cbox_code'); return false">Tickets, code reviews and source codes:</a><br>
             <input class="cbox" name="cbox_code" type=checkbox value="site:ghc.haskell.org/trac/ghc/ticket"> https://ghc.haskell.org/trac/ghc/ticket <br>
             <input class="cbox" name="cbox_code" type=checkbox value="site:phabricator.haskell.org"> https://phabricator.haskell.org <br>
             <input class="cbox" name="cbox_code" type=checkbox value="site:github.com/ghc/ghc"> https://github.com/ghc/ghc <br>
 	    <br>
 
-            <a href="javascript:void(0)" onclick="update_category('cbox_spec'); return false">Haskell report 2010 and GHC user guide:</a><br>
+            <a href="javascript:void(0)" title="toggle sub category" onclick="update_category('cbox_spec'); return false">Haskell report 2010 and GHC user guide:</a><br>
             <input class="cbox" name="cbox_spec" type=checkbox value="site:www.haskell.org/onlinereport/haskell2010"> https://www.haskell.org/onlinereport/haskell2010 <br>
             <input class="cbox" name="cbox_spec" type=checkbox value="site:downloads.haskell.org/~ghc/latest/docs/html/users_guide"> https://downloads.haskell.org/~ghc/latest/docs/html/users_guide <br>
 	    <br>
 
-            <a href="javascript:void(0)" onclick="update_category('cbox_prop'); return false">Proposals:</a><br>
+            <a href="javascript:void(0)" title="toggle sub category" onclick="update_category('cbox_prop'); return false">Proposals:</a><br>
             <div class="weak">
             <input class="cbox weak" name="cbox_prop" type=checkbox value="site:github.com/ghc-proposals/ghc-proposals"> https://github.com/ghc-proposals/ghc-proposals <br>
             <input class="cbox weak" name="cbox_prop" type=checkbox value="site:github.com/haskell/rfcs"> https://github.com/haskell/rfcs<br>

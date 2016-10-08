@@ -24,7 +24,7 @@
 	SHOULD BE REFACTORING.
     -->
     <script type="text/javascript">
-    function onsubmit_func() {
+    function generate_query() {
         var v = document.getElementsByName("checkb");
 
         var c = []
@@ -82,7 +82,7 @@
 
 
         <!- main body is here -->
-        <form action="http://www.google.com/search" method="get" onsubmit="onsubmit_func()">
+        <form action="http://www.google.com/search" method="get" onsubmit="generate_query()">
           <input id="query" type=text size=60 maxlength=255 value="" placeholder="input here">
           <input id="hid_q" type=hidden name=q value="">
           <button>Google search</button>
